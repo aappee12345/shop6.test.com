@@ -11,6 +11,20 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['middleware' => ['web','admin.login'],'prefix'=>'Admin','namespace'=>'Admin'],function(){
+    Route::get('index/index','IndexController@index');
+    Route::any('login/logout','LoginController@logout');
+    Route::get('user/index','UserController@index');
+    Route::get('user/update_pwd','UserController@updatePwd');
+    Route::post('user/do_update_pwd','UserController@doUpdatePwd');
+    Route::resource('category','CategoryController');/*资源路由 一条路由控制增删改查*/
+    Route::resource('article','ArticleController');
+    Route::post('cate/changeOrder','CategoryController@changeOrder');
+
+});
+Route::any('Admin/login/index','Admin\LoginController@index');
+Route::get('Admin/login/captcha','Admin\LoginController@captcha');

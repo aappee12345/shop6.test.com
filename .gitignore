@@ -1,47 +1,13 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+/shop6
+/shop06/vendor             // 该目录下包含Laravel源代码和第三方依赖包
+/shop06/.env                // 本地环境配置
+/shop06/node_modules       // 若有前端框架目录
+/shop06/public/admin
+/shop06/public/upload      // 若有开发中上传的文件不做版本
+/shop06/storage/framework/cache/*  // 项目框架缓存
+/shop06/storage/framework/sessions/*
+/shop06/storage/framework/views/*
+/shop06/storage/logs/*             // 日志
+/shop06/.idea                       // IDE 文件
+shop06/public/admin/images/c.jpg
+*.jpg
