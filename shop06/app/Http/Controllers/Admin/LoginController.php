@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Common\ConstConfig;
+use App\Http\Common\ReturnType;
 use App\Http\Service\Impl\UserServiceImpl;
 use Illuminate\Http\Request;
 use App\Tool\Vcode;
@@ -17,7 +18,7 @@ class LoginController extends CommonController
         if ($user!=null&&$user->role!=null){/*登录判断*/
             return redirect('Admin/index/index'); /*已登录 跳转至后台首页*/
         }
-        return view('admin.login');
+        return ReturnType::returnCode([],$this->getReturnType(),'admin.login');
     }
 
     public function logout(Request $request){

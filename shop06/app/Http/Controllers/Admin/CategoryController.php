@@ -2,24 +2,29 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Common\ConstConfig;
 use App\Http\Common\RequestValidate;
+use App\Http\Common\ReturnType;
 use App\Http\Common\ServerResponse;
 use App\Http\Model\CategoryModel;
 use App\Http\Requests\CategoryRequest;
-use App\Http\Service\Impl\CategoryServiceImpl;
 use Illuminate\Http\Request;
 
 
 class CategoryController extends CommonController
 {
-    /*GET Admin/category*/
+    private $category;
+    public function __construct(){
+        parent::__construct();
+        $this->category = new CategoryModel();
+    }
     /**
-     * 分类列表页面
+     * 分类列表页面 GET Admin/category
      */
     public function index(){
-        $tree = CategoryModel::tree();
-        $count = count($tree);
-        return view('admin.category.index',compact('tree','count'));
+        $data['tree'] = $tree = $this->category->tree();
+        $data['count'] = count($tree);
+        return ReturnType::returnCode($data,$this->getReturnType(),'admin.category.index');
     }
 
     /*POST Admin/category*/
@@ -29,44 +34,45 @@ class CategoryController extends CommonController
         return ServerResponse::createBySuccessMessage('添加成功');
     }
 
-    /*GET Admin/category/create*/
     /**
-     * 分类添加页面
+     * 分类添加页面 GET Admin/category/create
      */
     public function create(){
-        $tree = CategoryModel::tree();
-        return view('admin.category.add',compact('tree'));
+        $data['tree'] = $this->category->tree();
+        return ReturnType::returnCode($data,$this->getReturnType(),'admin.category.add');
     }
 
     /*PUT Admin/category/{category}*/
-    public function update(Request $request){
-        $res = CategoryModel::where('id',$request->input('id'))->update($request->except('_token','_method'));
+    public function update(Request $request,$id){
+        $res = CategoryModel::where('id',$id)->update($request->except('_token','_method'));
         if ($res > 0) return ServerResponse::createBySuccessMessage('修改成功');
         return ServerResponse::createByErrorMessage('修改失败');
     }
 
-    /*GET Admin/category/{category}/edit*/
+    /**
+     * 分类修改页面 GET Admin/category/{id}/edit
+     */
     public function edit($id){
         if (!RequestValidate::checkGetParam($id)) return ServerResponse::createByErrorMessage('参数错误');
-        $tree = CategoryModel::tree();
-        $data = CategoryModel::find($id);
-        return view('admin.category.edit',compact('tree','data'));
+        $data['tree'] = $this->category->tree();
+        $data['info'] = CategoryModel::find($id);
+        if ($data['info']==null){
+            return ServerResponse::createByErrorMessage('参数ID错误，该分类不存在');
+        }
+        return ReturnType::returnCode($data,$this->getReturnType(),'admin.category.edit');
     }
 
     /*DELETE Admin/category/{category}*/
+    /**
+     * 分类删除
+     * @param $id
+     * @return false|string
+     */
     public function destroy($id){
-        if (!RequestValidate::checkGetParam($id)) return ServerResponse::createByErrorMessage('参数错误');
-        $res = CategoryModel::destroy($id);
-        if ($res > 0) return ServerResponse::createBySuccessMessage('删除成功');
-        return ServerResponse::createByErrorMessage('删除失败');
+        return $this->commonDelete($this->category->getTable(),$id);
     }
 
     public function changeOrder(Request $request){
-        if (!RequestValidate::checkParam($request,['id','sort_order'])) return ServerResponse::createByErrorMessage('参数错误');
-        $id = $request->input('id');
-        $category = CategoryModel::find($id);
-        $category->sort_order = $request->input('sort_order');
-        $category->save();
-        return ServerResponse::createBySuccessMessage('排序号修改成功');
+        return $this->commonChangeField($request,$this->category->getTable(),$this->category->getPrimaryKey(),$this->category->getOrderField());
     }
 }

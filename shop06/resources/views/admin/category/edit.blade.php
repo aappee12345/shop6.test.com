@@ -20,7 +20,7 @@
                         <span class="x-red">*</span>分类名称
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="name" name="name" required="" value="{{$data->name}}" autocomplete="off" class="layui-input">
+                        <input type="text" id="name" name="name" required="" value="{{$data['info']->name}}" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -30,8 +30,8 @@
                     <div class="layui-input-inline">
                         <select name="parent_id">
                             <option value="">顶级分类</option>
-                            @foreach ($tree as $vo)
-                            <option value="{{$vo->id}}" @if($vo->id==$data->parent_id) selected @endif>{{$vo->pre}}{{$vo->name}}</option>
+                            @foreach ($data['tree'] as $vo)
+                            <option value="{{$vo->id}}" @if($vo->id==$data['info']->parent_id) selected @endif>{{$vo->pre}}{{$vo->name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -42,7 +42,7 @@
                         分类标题
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="title" name="title" value="{{$data->title}}" placeholder="请输入分类标题" autocomplete="off" class="layui-input">
+                        <input type="text" id="title" name="title" value="{{$data['info']->title}}" placeholder="请输入分类标题" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -50,7 +50,7 @@
                         <span class="x-red"></span>分类关键字
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" name="keywords" lay-verify="keywords" value="{{$data->keywords}}" autocomplete="off" placeholder="请输入分类关键字" class="layui-input">
+                        <input type="text" name="keywords" lay-verify="keywords" value="{{$data['info']->keywords}}" autocomplete="off" placeholder="请输入分类关键字" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -58,16 +58,7 @@
                         <span class="x-red"></span>分类描述
                     </label>
                     <div class="layui-input-inline">
-                        <textarea placeholder="请输入分类描述" name="description" class="layui-textarea">{{$data->description}}</textarea>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label for="L_pass" class="layui-form-label">
-                        分页数
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="text" id="page_num" name="page_num" required="" lay-verify="number"
-                               autocomplete="off" value="{{$data->page_num}}" class="layui-input">
+                        <textarea placeholder="请输入分类描述" name="description" class="layui-textarea">{{$data['info']->description}}</textarea>
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -76,7 +67,7 @@
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="sort_order" name="sort_order" required="" lay-verify="number"
-                               autocomplete="off" value="{{$data->sort_order}}" class="layui-input">
+                               autocomplete="off" value="{{$data['info']->sort_order}}" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -87,7 +78,7 @@
                     </button>
 {{--                    <input type="hidden" name="_method" value="put"/>--}}
                     @method('put')
-                    <input type="hidden" name="id" value="{{$data->id}}"/>
+{{--                    <input type="hidden" name="id" value="{{$data['info']->id}}"/>--}}
                     {{csrf_field()}}
                 </div>
             </form>
@@ -106,7 +97,7 @@
             form.on('submit(edit)', function (data) {
                 $.ajax({
                     type: 'POST',
-                    url: "{{url('Admin/category/update')}}",
+                    url: "{{url('Admin/category')}}/{{$data['info']->id}}",
                     data: data.field,
                     dataType: 'JSON',
                     success: function (arr) {
@@ -114,7 +105,7 @@
                             if (arr.status == 0){
                                 location.href="{{url('Admin/category')}}";
                             }else{
-                                location.href="{{url('Admin/category/'.$data->id.'/edit')}}";
+                                location.href="{{url('Admin/category/'.$data['info']->id.'/edit')}}";
                             }
 
                         });

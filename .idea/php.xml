@@ -19,7 +19,6 @@
       <path value="$PROJECT_DIR$/shop06/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/shop06/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/shop06/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/shop06/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/shop06/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/shop06/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/shop06/vendor/nunomaduro/collision" />
@@ -88,6 +87,8 @@
       <path value="$PROJECT_DIR$/shop06/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/shop06/vendor/jakub-onderka/php-console-highlighter" />
       <path value="$PROJECT_DIR$/shop06/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/shop06/vendor/gregwar/captcha" />
+      <path value="$PROJECT_DIR$/shop06/vendor/erusev/parsedown" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

@@ -15,7 +15,7 @@
             <xblock>
 {{--                <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>--}}
                 <a class="layui-btn" href="{{url('Admin/category/create')}}"><i class="layui-icon">&#xe608;</i>添加</a>
-                <span class="x-right" style="line-height:40px">共有数据：{{$count}} 条</span>
+                <span class="x-right" style="line-height:40px">共有数据：{{$data['count']}} 条</span>
             </xblock>
             <table class="layui-table">
                 <thead>
@@ -26,12 +26,12 @@
                     <th>分类名称</th>
                     <th width="150">父级分类</th>
                     <th width="300">分类关键字</th>
-                    <th width="50">分页数</th>
                     <th width="50">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($tree as $v)
+                @if ($data['tree'])
+                @foreach($data['tree'] as $v)
                 <tr>
                     <td><input type="checkbox" value="1" name=""></td>
                     <td >{{$v->id}}</td>
@@ -39,13 +39,17 @@
                     <td><a href="{{url('Admin/category/'.$v->id.'/edit')}}">{{$v->pre}}{{$v->name}}</a></td>
                     <td >{{isset($v->parent['name'])?$v->parent['name']:'顶级分类'}}</td>
                     <td>{{$v->keywords}}</td>
-                    <td >{{$v->page_num}}</td>
                     <td class="td-manage">
                         <a title="修改" href="{{url('Admin/category/'.$v->id.'/edit')}}" class="ml-5" style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a>
                         <a title="删除" href="javascript:void(0);" onclick="del(this,'{{$v->id}}')" style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a>
                     </td>
                 </tr>
                 @endforeach
+                    @else
+                    <tr>
+                        <td colspan="8" align="center">暂无分类</td>
+                    </tr>
+                @endif
                 </tbody>
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->

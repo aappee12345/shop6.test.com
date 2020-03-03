@@ -3,7 +3,9 @@
 /shop06/.env                // 本地环境配置
 /shop06/node_modules       // 若有前端框架目录
 /shop06/public/admin
+/shop06/public/home
 /shop06/public/upload      // 若有开发中上传的文件不做版本
+/shop06/public/ueditor
 /shop06/storage/framework/cache/*  // 项目框架缓存
 /shop06/storage/framework/sessions/*
 /shop06/storage/framework/views/*

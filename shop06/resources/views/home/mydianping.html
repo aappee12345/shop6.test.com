@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>会员中心-我的订单</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="css/head.css" rel="stylesheet" type="text/css"/>
+    <link href="css/member.css" rel="stylesheet" type="text/css"/>
+    <link href="css/foot.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+<!--头部开始-->
+<div id="wrap">
+    <div class="header clear">
+        <div class="head">
+            <div class="welcome">满泽装饰效果图欢迎您！</div>
+            <div class="reg"><a href="javascript:void(0)" onclick="reg();">我要注册</a></div>
+            <div class="reg"><a href="javascript:void(0)" onclick="log();">登录</a></div>
+            <div class="log"><img src="images/log.png" onclick="show();"></div>
+            <div class="rmb"><img src="images/rmb.png"></div>
+            <div class="reg"><a href="javascript:void(0)" onclick="scans();">扫码支付</a></div>
+            <div class="rmb"><img src="images/kehu.png"></div>
+            <div class="reg"><a href="javascript:void(0)" onclick="pin();">客户点评</a></div>
+            <div class="pic_r"><img src="images/houtai_s.png" onclick="show();"></div>
+            <div class="pic_r"><img src="images/save_s.png" onclick="show();"></div>
+            <div class="pic_r"><img src="images/weixin_s.png" onclick="show();"></div>
+            <div class="pic_r"><img src="images/zfb_s.png" onclick="show();"></div>
+        </div>
+
+    </div>
+    <div class="logo">
+        <div id="logo"><img src="images/logo.png"/></div>
+        <div class="search">
+            <div>
+                <input class="up" name="key" type="text" value=""/>
+                <input id="search" type="submit" value="搜 索"/>
+
+            </div>
+            <div id="down">
+                <div class="cate">
+                    <a href="#" target="_self">客厅效果图</a> |
+                    <a href="#" target="_self">餐厅效果图</a> |
+                    <a href="#" target="_self">主卧效果图</a> |
+                    <a href="#" target="_self">大厅效果图</a> |
+                    <a href="#" target="_self">会议室效果图</a>
+                </div>
+            </div>
+        </div>
+        <div class="or">或者</div>
+        <div class="ordol"><img src="images/ordol.png"></div>
+        <div id="dbzf">
+            <div class="up"><a href="#" target="_self"><img src="images/dbjyzf_s.png"/></a></div>
+            <div class="down">服务热线：023-6292-2838</div>
+        </div>
+    </div>
+    <style>
+        .map_con_wrap{ z-index:9999; position:absolute; background:#FFF;width:229px; height:auto; top:40px;left:0; display: block;border-right:3px solid #000;}
+        .map_con_wrap1{ z-index:9999; position:absolute; background:#FFF;width:229px; height:auto; top:40px;left:0; display: none;}
+    </style>
+    <!--分类导航-->
+    <div class="menu_b">
+        <div class="w1200">
+            <div class="nav_btn" id="topnav_btn">
+                <a href="javascript:void(0)" class="fl" target="_self">作品案例分类</a>
+                <i class="sj"></i>
+                <!--左侧商品分类-->
+                <div class="map_con_wrap dn" id="topnav_con" style="display:none;">
+                    <ul>
+                        <li class="map_left_li active">
+                            <div class="list_t">
+                                <a href="#"><span>家装效果图</span></a>
+                            </div>
+                        </li>
+                        <li class="map_left_li">
+                            <div class="list_t">
+                                <a href="#"><span>工装效果图</span></a>
+                            </div>
+                        </li>
+                        <li class="map_left_li">
+                            <div class="list_t">
+                                <a href="#"><span>360全景图</span></a>
+                            </div>
+                        </li>
+                        <li class="map_left_li">
+                            <div class="list_t">
+                                <a href="#"><span>方案深化图</span></a>
+                            </div>
+                        </li>
+                        <li class="map_left_li">
+                            <div class="list_t">
+                                <a href=""><span>室外表现图</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--左侧商品分类 end-->
+            </div>
+            <ul class="menu">
+                <li class="cur" id="Menu1">
+                    <a href="../index.html" target="_self">首 页</a>
+                </li>
+                <li id="Menu2">
+                    <a href="../customerservice/fuwuliucheng.html" target="_self">客户服务</a>
+                </li>
+                <li id="Menu3">
+                    <a href="member_center.html" target="_self">会员中心</a>
+                </li>
+                <li id="Menu4">
+                    <a href="../gongsijianjie.html" target="_self">关注我们</a>
+                </li>
+                <li id="Menu5">
+                    <a href="../news.html" target="_self">新闻动态</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--分类导航-->
+    <div class="clear">
+    </div>
+    <!--头部结束-->
+
+	<div class="servicetop clear">
+        <div class="top"><img src="images/position.png" width="22" height="18"/></div>
+        <div class="position"><a href="index.html" target="_self">首页</a> > <a href="fuwuliucheng.html" target="_self">客户服务</a> > <a href="fuwuliucheng.html" target="_self">服务流程</a></div>
+    </div>
+
+    <div class="member clear">
+        <div class="left clear">
+            <div class="li2" onclick="clicks('1')">账户管理</div>
+            <a href="zhanghuxinxi.html" target="_self"><div class="li1 li11">账户信息</div></a>
+            <a href="zhanghuchongzhi.html" target="_self"><div class="li1 li11">账户充值</div></a>
+            <a href="shouzhimingxi.html" target="_self"><div class="li1 li11">收支明细</div></a>
+            <a href="mycard.html" target="_self"><div class="li1 li11">我的银行卡</div></a>
+            <a href="tixianshenqing.html" target="_self"><div class="li1 li11">提现申请</div></a>
+            <a href="myjifen.html" target="_self"><div class="li1 li11">我的积分</div></a>
+            <a href="sendjifen.html" target="_self"><div class="li1 li11">预存送积分</div></a>
+            <div class="li2" onclick="clicks('2')">订单管理</div>
+            <a href="mydingdan.html" target="_self"><div class="li1 li21">我的订单</div></a>
+            <a href="mydianping.html" target="_self"><div class="li1 li21 on">我的点评</div></a>
+            <a href="fapiaoshenqing.html" target="_self"><div class="li1 li21">发票申请</div></a>
+            <div class="li2" onclick="clicks('3')">资料管理</div>
+            <a href="jibenziliao.html" target="_self"><div class="li1 li31">基本资料</div></a>
+            <a href="mimaguanli.html" target="_self"><div class="li1 li31">密码管理</div></a>
+            <a href="zhanghaobangding.html" target="_self"><div class="li1 li31">账号绑定</div></a>
+            <a href="xiaoxizhongxin.html" target="_self"><div class="li1 li31">消息中心</div></a>
+            <div class="li2" onclick="clicks('4')">我的特权</div>
+            <a href="myrecommend.html" target="_self"><div class="li1 li41">我的推荐</div></a>
+            <a href="viptequan.html" target="_self"><div class="li1 li41">VIP特权</div></a>
+            <a href="sviptequan.html" target="_self"><div class="li1 li41">SVIP特权</div></a>
+            <a href="gongsiyuejie.html" target="_self"><div class="li1 li41">公司月结</div></a>
+        </div>
+
+        <div class="right clear">
+			<div class="order">
+                <div class="tit">我的订单</div>
+                <div class="cont clear">
+                	<div class="top clear">
+                		<a href="#"><div class="o">所有订单</div></a>
+                		<a href="#"><div class="o">代付款<span>2</span></div></a>
+                		<a href="#"><div class="o on">制图中<span>2</span></div></a>
+                		<a href="#"><div class="o">待确认<span>2</span></div></a>
+                		<a href="#"><div class="o">待评价<span>4</span></div></a>
+                		<a href="#"><div class="p" style="float:left;width:395px;height:41px;"></div></a>
+                	</div>
+                	<div class="dpheader">
+                        <div class="fwxm">服务项目</div>
+                        <div class="xmmc">项目名称</div>
+                        <div class="count">数量</div>
+                        <div class="pay">实付款(元)</div>
+                        <div class="time">对图时间</div>
+                        <div class="status">进度状态</div> 
+                    </div>
+                    <div class="dplist">
+                        <div class="header">
+                            <div class="inp"><input type="checkbox" disabled="true" name="" />&nbsp; <b>2016-02-18 12:00</b>&nbsp; &nbsp;订单编号：20160218001</div>
+                        </div>
+                        <div class="dpbody clear">
+                            <div class="b1">
+                                <div class="b1u">
+                                    <div class="left">家装效果图</div>
+                                    <div class="middle">万科金色悦城10-2-202 王老师</div>
+                                    <div class="right">1</div>
+                                </div>
+                                <div class="b1d">
+                                    <div class="left">成品图修改保险服务<a href="">[?]</a></div>
+                                    <div class="right">2</div>
+                                </div>
+                            </div>
+                            <div class="b2">660.00</div>
+                        
+                            <div class="b3">
+                                <div class="u">2016-02-20</div>
+                                <div class="d">12时</div>
+                            </div>
+                            <div class="b4">
+                                <div class="u">交易成功</div>
+                                <div class="d"><a href="">订单详情</a></div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="ljpj">
+                    	<span class="text">累计评价</span>
+                    	<span class="count">499</span>
+                    </div>
+                    <div class="score clear">
+                        <div class="left">
+                            <div class="u">与描述相符</div>
+                            <div class="m">4.9</div>
+                            <div class="d"><img src="images/score_star4.png" alt=""></div>
+                        </div>
+                        <div class="middle"><img src="images/score_mi.png" alt=""></div>
+                        <div class="right clear">
+                            <div class="list">非常有耐心(85)</div>
+                            <div class="list">水平很棒(85)</div>
+                            <div class="list">非常有耐心(85)</div>
+                            <div class="list">非常有耐心(85)</div>
+                            <div class="list">非常有耐心(85)</div>
+                            <div class="list">非常有耐心(85)</div>
+                            <div class="list">非常有耐心(85)</div>
+                            <div class="list">非常有耐心(85)</div>
+                            <div class="list">非常有耐心(85)</div>
+   
+                        </div>
+                    </div>
+                    <div class="khpj">
+                        <div class="khpj1 clear">
+                            <div class="left">其他客户，需要你的建议哦！</div>
+                            <div class="right"><img src="" alt="">认真填写评价可以获得<span>1320</span>点的积分</div>
+                        </div>
+                        <div class="khpj2">
+                            <div class="left clear">
+                                <div class="l1">整体评价</div>
+                                <div class="l2"><textarea name="" id="" cols="60" rows="6"></textarea></div>
+                            </div>
+                            <div class="left clear">
+                                <div class="l3">
+                                    <div class="li"><span>*</span> 服务态度</div>
+                                    <div class="li"><span>*</span> 工作速度</div>
+                                    <div class="li"><span>*</span> 完成质量</div>
+                                </div>
+                                <div class="l4">
+                                    <div class="li">
+                                        <img class="fw fw1" src="images/star00.png" onclick="change('fw','1')" alt="">
+                                        <img class="fw fw2" src="images/star00.png" onclick="change('fw','2')" alt="">
+                                        <img class="fw fw3" src="images/star00.png" onclick="change('fw','3')" alt="">
+                                        <img class="fw fw4" src="images/star00.png" onclick="change('fw','4')" alt="">
+                                        <img class="fw fw5" src="images/star00.png" onclick="change('fw','5')" alt="">
+                                    </div>
+                                    <div class="li">
+                                        <img class="gz gz1" src="images/star00.png" onclick="change('gz','1')" alt="">
+                                        <img class="gz gz2" src="images/star00.png" onclick="change('gz','2')" alt="">
+                                        <img class="gz gz3" src="images/star00.png" onclick="change('gz','3')" alt="">
+                                        <img class="gz gz4" src="images/star00.png" onclick="change('gz','4')" alt="">
+                                        <img class="gz gz5" src="images/star00.png" onclick="change('gz','5')" alt="">
+                                    </div>
+                                    <div class="li">
+                                        <img class="zl zl1" src="images/star00.png" onclick="change('zl','1')" alt="">
+                                        <img class="zl zl2" src="images/star00.png" onclick="change('zl','2')" alt="">
+                                        <img class="zl zl3" src="images/star00.png" onclick="change('zl','3')" alt="">
+                                        <img class="zl zl4" src="images/star00.png" onclick="change('zl','4')" alt="">
+                                        <img class="zl zl5" src="images/star00.png" onclick="change('zl','5')" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="khpj3">
+                            整体服务
+                        </div>
+                        <div class="khpj4">
+                            <input type="radio" name="pjtype"><div class="img"><img src="images/hp.png" alt=""><span>好评</span></div>
+                            <input type="radio" name="pjtype"><div class="img"><img src="images/zp.png" alt=""><span>中评</span></div>
+                            <input type="radio" name="pjtype"><div class="img"><img src="images/cp.png" alt=""><span>差评</span></div>
+                        </div>
+                        <div class="khpj5">
+                            <input type="hidden" name="fw" id="fw" value="0">
+                            <input type="hidden" name="gz" id="gz" value="0">
+                            <input type="hidden" name="zl" id="zl" value="0">
+                            <input type="submit" value="提交评价">
+                        </div>
+                    </div>
+                    <script>
+                    function change(type,id)
+                    {
+                        $("."+type).attr('src','images/star00.png');
+                        var i = id;
+                        for (;i>0;i--)
+                        {
+                            $("."+type+i).attr('src','images/star0'+id+'.png');
+                        }
+                        $("#"+type).val(id);
+                    }
+                    </script>
+                    <div class="catename2">
+                        <img src="images/good_t.png" width="211" height="15" alt="好评"/>
+                    </div>
+                    <div class="evallists">
+                        <div class="evallist">
+                            <div class="up2 clear">
+                                <div class="left clear">
+                                    <div class="tx"><img src="images/tx.png" width="54" height="54" alt="头像"/></div>
+                                    <div class="rt">
+                                        <div class="up3"><div class="tel">136*******8</div><div class="img">好评</div></div>
+                                        <div class="down3"><span class="s1">非常有耐心</span><span class="s1">水平很棒</span><span class="s2">很耐心，后期处理很棒！感谢啊！</span></div>
+                                    </div>
+                                </div>
+                                <div class="right">2015-12-30 14:50</div>
+                            </div>
+                            <div class="down2 clear">
+                                <div class="score">
+                                    <div class="sa">
+                                        <div class="pic">完成质量</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">工作速度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">服务态度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="evallist">
+                            <div class="up2 clear">
+                                <div class="left clear">
+                                    <div class="tx"><img src="images/tx.png" width="54" height="54" alt="头像"/></div>
+                                    <div class="rt">
+                                        <div class="up3"><div class="tel">136*******8</div><div class="img">好评</div></div>
+                                        <div class="down3"><span class="s1">非常有耐心</span><span class="s1">水平很棒</span><span class="s2">很耐心，后期处理很棒！感谢啊！</span></div>
+                                    </div>
+                                </div>
+                                <div class="right">2015-12-30 14:50</div>
+                            </div>
+                            <div class="down2 clear">
+                                <div class="score">
+                                    <div class="sa">
+                                        <div class="pic">完成质量</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">工作速度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">服务态度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="evallist">
+                            <div class="up2 clear">
+                                <div class="left clear">
+                                    <div class="tx"><img src="images/tx.png" width="54" height="54" alt="头像"/></div>
+                                    <div class="rt">
+                                        <div class="up3"><div class="tel">136*******8</div><div class="img">好评</div></div>
+                                        <div class="down3"><span class="s1">非常有耐心</span><span class="s1">水平很棒</span><span class="s2">很耐心，后期处理很棒！感谢啊！</span></div>
+                                    </div>
+                                </div>
+                                <div class="right">2015-12-30 14:50</div>
+                            </div>
+                            <div class="down2 clear">
+                                <div class="score">
+                                    <div class="sa">
+                                        <div class="pic">完成质量</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">工作速度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">服务态度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="evallist">
+                            <div class="up2 clear">
+                                <div class="left clear">
+                                    <div class="tx"><img src="images/tx.png" width="54" height="54" alt="头像"/></div>
+                                    <div class="rt">
+                                        <div class="up3"><div class="tel">136*******8</div><div class="img">好评</div></div>
+                                        <div class="down3"><span class="s1">非常有耐心</span><span class="s1">水平很棒</span><span class="s2">很耐心，后期处理很棒！感谢啊！</span></div>
+                                    </div>
+                                </div>
+                                <div class="right">2015-12-30 14:50</div>
+                            </div>
+                            <div class="down2 clear">
+                                <div class="score">
+                                    <div class="sa">
+                                        <div class="pic">完成质量</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">工作速度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">服务态度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="evallist">
+                            <div class="up2 clear">
+                                <div class="left clear">
+                                    <div class="tx"><img src="images/tx.png" width="54" height="54" alt="头像"/></div>
+                                    <div class="rt">
+                                        <div class="up3"><div class="tel">136*******8</div><div class="img">好评</div></div>
+                                        <div class="down3"><span class="s1">非常有耐心</span><span class="s1">水平很棒</span><span class="s2">很耐心，后期处理很棒！感谢啊！</span></div>
+                                    </div>
+                                </div>
+                                <div class="right">2015-12-30 14:50</div>
+                            </div>
+                            <div class="down2 clear">
+                                <div class="score">
+                                    <div class="sa">
+                                        <div class="pic">完成质量</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">工作速度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                    <div class="sa">
+                                        <div class="pic">服务态度</div>
+                                        <div class="tex">5.0分</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+    </div>
+<script>
+    	function clicks(id)
+    	{
+    		//alert(id);
+    		$(".li1").hide();
+    		$(".li"+id+"1").show();
+    	}
+    	function shows()
+    	{
+    		$(".mmi img.sm1").attr("src","images/sm2.png");
+    		$(".mmi img.sm3").show();
+    	}
+    	function hides()
+    	{
+    		$(".mmi img.sm1").attr("src","images/sm1.png");
+    		$(".mmi img.sm3").hide();
+    	}
+    	/*检测radio是否选中控制图片边框样式*/
+    	function checks(id)
+    	{
+    		$(".radio>img").removeClass("on");
+    		$("#r"+id).addClass("on");
+    	}
+    </script>
+
+    <div class="footline1"></div>
+    <!--尾部开始-->
+    <div class="footer">
+        <div class="single">
+            <div class="about">
+                <div class="title">新手指南</div>
+                <div class="stitle"><a href="zixunredian.html">咨询热点</a></div>
+                <div class="stitle"><a href="#">会员介绍</a></div>
+                <div class="stitle"><a href="#">积分介绍</a></div>
+            </div>
+            <div class="about">
+                <div class="title">交易保障</div>
+                <div class="stitle"><a href="#">担保交易</a></div>
+                <div class="stitle"><a href="#">客户保障</a></div>
+                <div class="stitle"><a href="#">急速改图</a></div>
+            </div>
+            <div class="about">
+                <div class="title">会员中心</div>
+                <div class="stitle"><a href="#">我的点评</a></div>
+                <div class="stitle"><a href="#">我的积分</a></div>
+                <div class="stitle"><a href="#">我的订单</a></div>
+            </div>
+            <div class="about">
+                <div class="title">关注我们</div>
+                <div class="stitle"><a href="#">公司简介</a></div>
+                <div class="stitle"><a href="#">公司资质</a></div>
+                <div class="stitle"><a href="#">在线客服</a></div>
+            </div>
+            <div class="about1">
+                <div class="up4">重庆满泽装饰设计有限公司</div>
+                <div class="up5">TEL：023-6292-2838</div>
+                <div class="down4">136-1823-7979/6832/6833/1789</div>
+                <div class="down4">周一至周六9:00-20:00</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer1">
+        <div class="copy">Copyright @ 重庆满泽装饰设计有限公司 WWW.WWCAD.COM 版权所有并保留所有权利 ICP备案证书号：渝ICP备15012273号</div>
+        <div class="bottom">
+            <img src="images/zfb_f.png" width="128" height="47" alt="支付宝"/>
+            <img src="images/zxw_f.png" width="128" height="47" alt="征信网"/>
+            <img src="images/zxwz_f.png" width="128" height="47" alt="征信网站"/>
+            <img src="images/360_f.png" width="128" height="47" alt="360网站"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

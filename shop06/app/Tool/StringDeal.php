@@ -34,12 +34,12 @@ class StringDeal
 
     /**
      * 判断所传值是否为null、空、空白字符 为空返回真
-     * @param string $str
+     * @param mixed $str
      * @return boolean
      */
     public static function isBlank($str){
         if ($str == null) return true;
-        if (!is_string($str)) return false;
+        if (!is_string($str)&&!is_numeric($str)) return false;
         if (trim($str) == '') return true;
         return false;
     }

@@ -47,6 +47,16 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+        'ftp' => [
+            'driver' => 'ftp',
+            'host' => 'img.test.com',
+            'username' => 'wangmengyu',
+            'password' => '123456',
+            'port' => '21',
+            'root' => '/shop06',
+            'passive' => false,
+            'timeout' => 100,
+        ],
 
         'public' => [
             'driver' => 'local',

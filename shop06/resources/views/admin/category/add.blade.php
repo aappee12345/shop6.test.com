@@ -30,7 +30,7 @@
                     <div class="layui-input-inline">
                         <select name="parent_id">
                             <option value="">顶级分类</option>
-                            @foreach ($tree as $vo)
+                            @foreach ($data['tree'] as $vo)
                             <option value="{{$vo->id}}">{{$vo->pre}}{{$vo->name}}</option>
                             @endforeach
                         </select>
@@ -60,15 +60,6 @@
                     </label>
                     <div class="layui-input-inline">
                         <textarea placeholder="请输入分类描述" name="description" class="layui-textarea"></textarea>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label for="L_pass" class="layui-form-label">
-                        分页数
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="text" id="page_num" name="page_num" required="" lay-verify="number"
-                               autocomplete="off" value="12" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
