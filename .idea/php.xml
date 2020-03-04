@@ -89,6 +89,7 @@
       <path value="$PROJECT_DIR$/shop06/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/shop06/vendor/gregwar/captcha" />
       <path value="$PROJECT_DIR$/shop06/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/shop06/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

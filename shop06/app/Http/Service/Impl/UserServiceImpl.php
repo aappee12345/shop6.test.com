@@ -4,7 +4,7 @@ namespace App\Http\Service\Impl;
 
 use App\Http\Common\ConstConfig;
 use App\Http\Common\ServerResponse;
-use App\Http\Model\UserModel;
+use App\Http\Model\UsersModel;
 use App\Http\Requests\UserRequest;
 use App\Http\Service\IUserService;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class UserServiceImpl implements IUserService
      */
     public static function doLogin(Request $request){
         $where = ['username'=>$request->input('username')];
-        $user = UserModel::where($where)->first();
+        $user = UsersModel::where($where)->first();
         if ($user == null){
             return ServerResponse::createByErrorMessage('用户名错误！');
         }

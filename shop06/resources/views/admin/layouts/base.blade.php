@@ -101,9 +101,9 @@
                     </a>
                     <ul class="sub-menu" style="display:none">
                         <li>
-                            <a href="./banner-list.html">
+                            <a href="{{url('Admin/roles')}}">
                                 <i class="iconfont">&#xe6a7;</i>
-                                轮播列表
+                                角色列表
                             </a>
                         </li>
                     </ul>

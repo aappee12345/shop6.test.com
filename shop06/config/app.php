@@ -164,9 +164,9 @@ return [
 
 
         /*
-         * Package Service Providers...
+         * Package Permission Service Provider..
          */
-        //Anchu\Ftp\FtpServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Application Service Providers...
          */

@@ -18,11 +18,13 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web','admin.login'],'prefix'=>'Admin','namespace'=>'Admin'],function(){
     Route::get('index/index','IndexController@index');
     Route::any('login/logout','LoginController@logout');
-    Route::get('user/index','UserController@index');
-    Route::get('user/update_pwd','UserController@updatePwd');
-    Route::post('user/do_update_pwd','UserController@doUpdatePwd');
+    Route::get('user/index','UsersController@index');
+    Route::get('user/update_pwd','UsersController@updatePwd');
+    Route::post('user/do_update_pwd','UsersController@doUpdatePwd');
     Route::resource('category','CategoryController');/*资源路由 一条路由控制增删改查*/
     Route::resource('article','ArticleController');
+    Route::resource('roles','RolesController');
+    Route::resource('permissions','PermissionsController');
     Route::post('cate/changeOrder','CategoryController@changeOrder');
     Route::post('art/changeOrder','ArticleController@changeOrder');
     Route::post('art/updateAttr','ArticleController@updateAttr');

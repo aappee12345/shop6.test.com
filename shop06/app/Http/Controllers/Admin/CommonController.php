@@ -6,8 +6,6 @@ use App\Http\Common\ConstConfig;
 use App\Http\Common\RequestValidate;
 use App\Http\Common\ServerResponse;
 use App\Http\Controllers\Controller;
-use App\Http\Model\ArticleModel;
-use App\Http\Model\CategoryModel;
 use Illuminate\Http\Request;
 
 class CommonController extends Controller
@@ -16,7 +14,6 @@ class CommonController extends Controller
 
     public function __construct()
     {
-//        parent::__construct();
         $this->setReturnType(ConstConfig::getReturnType()->ADMIN_HTML);
     }
 

@@ -10,7 +10,12 @@ class ConstConfig{
     private static $sessionKey = [
         'ADMIN_USER' => 'admin_user',
         'VCODE' => 'vcode',
-        'USER' => 'user'
+        'WEB' => 'web'
+    ];
+    public static $guard_name = [
+        'ADMIN' => 'Admin',
+        'WEB'   => 'Web',
+        'API'   => 'Api'
     ];
     private static $returnType = [
         'ADMIN_JSON' => 'json',
@@ -24,6 +29,7 @@ class ConstConfig{
         'ADMIN_PAGE_NUM' => 10
     ];
     public static function getCateTreePrev(){ return self::$cateTreePrev; }
+    public static function getGuardName(){ return json_decode(json_encode(self::$guard_name)); }
     public static function getFtpInfo(){ return json_decode(json_encode(self::$ftpInfo)); }
     public static function getPageNum(){ return json_decode(json_encode(self::$pageNum)); }
     public static function getReturnType(){ return json_decode(json_encode(self::$returnType)); }

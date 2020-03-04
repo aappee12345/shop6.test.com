@@ -16,10 +16,12 @@ class AdminLogin
      */
     public function handle($request, Closure $next)
     {
+        /*
         $user = $request->session()->get(ConstConfig::getSessionKey()->ADMIN_USER);
         if ($user == null || $user->role == ''){
             return redirect('Admin/login/index');
         }
+        */
         return $next($request);
     }
 }
