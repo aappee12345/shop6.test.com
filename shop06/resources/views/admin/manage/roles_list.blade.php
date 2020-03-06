@@ -23,6 +23,7 @@
                     <th width="50"><input type="checkbox" name="" value=""></th>
                     <th width="50">ID</th>
                     <th>角色名称</th>
+                    <th width="60">角色权限</th>
                     <th width="50">操作</th>
                 </tr>
                 </thead>
@@ -33,6 +34,9 @@
                             <td><input type="checkbox" value="1" name=""></td>
                             <td >{{$v->id}}</td>
                             <td><a href="{{url('Admin/roles/'.$v->id.'/edit')}}">{{$v->name}}</a></td>
+                            <td class="td-manage" align="center">
+                                <a title="编缉权限" href="{{url('Admin/role/'.$v->id.'/editPermissions')}}" class="ml-5" style="text-decoration:none"><i class="layui-icon">&#xe614;</i></a>
+                            </td>
                             <td class="td-manage">
                                 <a title="修改" href="{{url('Admin/roles/'.$v->id.'/edit')}}" class="ml-5" style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a>
                                 <a title="删除" href="javascript:void(0);" onclick="del(this,'{{$v->id}}')" style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a>

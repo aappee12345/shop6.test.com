@@ -30,6 +30,8 @@ Route::group(['middleware' => ['web','admin.login'],'prefix'=>'Admin','namespace
     Route::post('art/changeOrder','ArticleController@changeOrder');
     Route::post('art/updateAttr','ArticleController@updateAttr');
     Route::post('art/upload','ArticleController@upload');
+    Route::any('role/{role}/editPermissions','RolesController@editPermissions');
+    Route::post('role/doEditPerm','RolesController@doEditPerm');
 });
 Route::group(['middleware' => ['web'],'prefix'=>'Home','namespace'=>'Home'],function(){
     Route::resource('article','ArticleController');

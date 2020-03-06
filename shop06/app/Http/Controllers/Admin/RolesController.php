@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Common\ConstConfig;
 use App\Http\Common\ReturnType;
 use App\Http\Common\ServerResponse;
+use App\Http\Model\PermissionsModel;
 use App\Http\Model\RolesModel;
 use App\Http\Requests\RolesRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -70,5 +72,24 @@ class RolesController extends CommonController
     public function destroy($id)
     {
         return $this->commonDelete($this->roles->getTable(),$id);
+    }
+
+    public function editPermissions($id){
+        $data['info'] = $info = RolesModel::find($id);
+        $permissions_roles = DB::table('permissions_roles')->where('role_id',$info->id)->get();
+        $data['permissions'] = [];
+        foreach ($permissions_roles as $p){
+            $data['permissions'][] = $p->permission_id;
+        }
+        $data['permission_list'] = PermissionsModel::all();
+        return ReturnType::returnCode($data,ConstConfig::getReturnType()->ADMIN_HTML,'admin.manage.roles_permissions_edit');
+    }
+
+    public function doEditPerm(Request $request){
+        DB::table('permissions_roles')->where('role_id',$request->input('id'))->delete();/*删除原有权限*/
+        $arr = $this->returnInsertPermissions($request);/*组装添加权限数组*/
+        $res = $this->commonAddAll($arr,'permissions_roles');/*重新添加权限*/
+        if ($res) return ServerResponse::createBySuccessMessage('编缉角色权限成功');
+        return ServerResponse::createByErrorMessage('编缉角色权限失败');
     }
 }
