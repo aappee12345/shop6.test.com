@@ -1,6 +1,6 @@
 @extends('admin.layouts.base')
 @section('title')
-    角色编缉
+    权限编缉
 @endsection
 @section('custom_css')
     <style>
@@ -17,15 +17,23 @@
             <form class="layui-form">
                 <div class="layui-form-item">
                     <label for="name" class="layui-form-label">
-                        <span class="x-red">*</span>角色名称
+                        <span class="x-red">*</span>权限名称
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="name" name="name" required="" value="{{$data['info']->name}}" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
+                    <label for="route_name" class="layui-form-label">
+                        <span class="x-red">*</span>权限路由
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="route_name" name="route_name" required="" value="{{$data['info']->route_name}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
                     <label for="guard_name" class="layui-form-label">
-                        <span class="x-red">*</span>所属模块
+                        <span class="x-red">*</span>所属板块名称
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="guard_name" name="guard_name" required="" value="{{$data['info']->guard_name}}" autocomplete="off" class="layui-input">
@@ -56,16 +64,15 @@
                 form.on('submit(edit)', function (data) {
                     $.ajax({
                         type: 'POST',
-                        url: "{{url('Admin/roles')}}/{{$data['info']->id}}",
+                        url: "{{url('Admin/permissions')}}/{{$data['info']->id}}",
                         data: data.field,
                         dataType: 'JSON',
                         success: function (arr) {
                             layer.msg(JSON.stringify(arr.msg), function () {
-                                //console.log(arr.msg);
                                 if (arr.status == 0){
-                                    location.href="{{url('Admin/roles')}}";
+                                    location.href="{{url('Admin/permissions')}}";
                                 }else{
-                                    //location.href="{{url('Admin/roles/create')}}";
+                                    //location.href="{{url('Admin/permissions/create')}}";
                                 }
 
                             });

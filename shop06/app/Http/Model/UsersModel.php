@@ -2,7 +2,7 @@
 namespace App\Http\Model;
 
 use App\Http\Common\ConstConfig;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\UsersRequest;
 use App\Http\Service\Impl\UserServiceImpl;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
@@ -23,7 +23,7 @@ class UsersModel extends Authenticatable
         return $this->belongsToMany(RolesModel::class);
     }
 
-    public static function updatePwd(UserRequest $request){
+    public static function updatePwd(UsersRequest $request){
         $user_id = $request->session()->get(ConstConfig::getSessionKey()->ADMIN_USER)->id;/*查询session*/
         $user = UserModel::find($user_id);/*获取当前用户*/
         return UserServiceImpl::updatePassword($request,$user);

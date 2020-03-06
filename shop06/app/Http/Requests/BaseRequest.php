@@ -19,5 +19,6 @@ class BaseRequest extends FormRequest
         $error = $validator->errors()->first();
         $response = response()->json(json_decode(ServerResponse::createByErrorMessage($error),true));
         throw new HttpResponseException($response);
+        //return ServerResponse::createByErrorMessage($error);
     }
 }

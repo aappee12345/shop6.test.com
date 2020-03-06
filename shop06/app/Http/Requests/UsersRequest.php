@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class UserRequest extends BaseRequest
+class UsersRequest extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.

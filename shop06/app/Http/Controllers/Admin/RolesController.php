@@ -12,16 +12,15 @@ use Spatie\Permission\Models\Permission;
 
 class RolesController extends CommonController
 {
+    public $roles;
     public function __construct(){
         parent::__construct();
+        $this->roles = new RolesModel();
     }
 
     public function index(){
         $data['count'] = 0;
-        //$role = Role::create(['name' => 'writer','guard_name'=>'Admin']);
-        //$permission = Permission::create(['name' => 'del article','guard_name'=>'Admin']);
-        //$role->givePermissionTo($permission);
-        $data['roleslist'] = RolesModel::paginate(1);
+        $data['roles_list'] = RolesModel::paginate(ConstConfig::getPageNum()->ADMIN_PAGE_NUM);
         return ReturnType::returnCode($data,$this->getReturnType(),'admin.manage.roles_list');
     }
     
@@ -68,8 +67,8 @@ class RolesController extends CommonController
         return ServerResponse::createByErrorMessage('修改失败');
     }
 
-    public function destory($id)
+    public function destroy($id)
     {
-        
+        return $this->commonDelete($this->roles->getTable(),$id);
     }
 }

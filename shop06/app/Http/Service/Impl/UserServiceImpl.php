@@ -5,7 +5,7 @@ namespace App\Http\Service\Impl;
 use App\Http\Common\ConstConfig;
 use App\Http\Common\ServerResponse;
 use App\Http\Model\UsersModel;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\UsersRequest;
 use App\Http\Service\IUserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -33,7 +33,7 @@ class UserServiceImpl implements IUserService
         return ServerResponse::createBySuccessMessageData('登录成功',$user);
     }
 
-    public static function updatePassword(UserRequest $request,$user)
+    public static function updatePassword(UsersRequest $request, $user)
     {
         /*处理修改密码*/
         /*

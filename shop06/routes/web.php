@@ -15,6 +15,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//Route::group(['middleware' => ['web','isAdmin'],'prefix'=>'Admin','namespace'=>'Admin'],function(){
 Route::group(['middleware' => ['web','admin.login'],'prefix'=>'Admin','namespace'=>'Admin'],function(){
     Route::get('index/index','IndexController@index');
     Route::any('login/logout','LoginController@logout');

@@ -106,6 +106,12 @@
                                 角色列表
                             </a>
                         </li>
+                        <li>
+                            <a href="{{url('Admin/permissions')}}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                权限列表
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="list" >

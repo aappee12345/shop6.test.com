@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RolesRequest extends FormRequest
+class RolesRequest extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class RolesRequest extends FormRequest
     {
         return [
             'name'=>'required|unique:roles',
-            'permissions' =>'required',
+            //'permissions' =>'required',
         ];
     }
 
@@ -33,7 +33,7 @@ class RolesRequest extends FormRequest
         return [
             'name.required' => '请填写角色名称',
             'name.unique' => '角色名称不能重复',
-            'permissions.required' => '请选择所有权限',
+            //'permissions.required' => '请选择所有权限',
         ];
     }
 }

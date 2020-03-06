@@ -14,27 +14,29 @@
             <!-- 右侧内容框架，更改从这里开始 -->
             <xblock>
                 {{--                <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>--}}
-                <a class="layui-btn" href="{{url('Admin/roles/create')}}"><i class="layui-icon">&#xe608;</i>添加</a>
-                <span class="x-right" style="line-height:40px">共有数据：{{$data['count']??'0'}} 条</span>
+                <a class="layui-btn" href="{{url('Admin/permissions/create')}}"><i class="layui-icon">&#xe608;</i>添加</a>
+                <span class="x-right" style="line-height:40px">共有数据：{{$data['total_count']??'0'}} 条</span>
             </xblock>
             <table class="layui-table">
                 <thead>
                 <tr>
                     <th width="50"><input type="checkbox" name="" value=""></th>
-                    <th width="50">ID</th>
-                    <th>角色名称</th>
+                    <th>权限名称</th>
+                    <th>权限路由</th>
+                    <th>所属板块</th>
                     <th width="50">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                @if (isset($data['roles_list']) && (!empty($data['roles_list'])))
-                    @foreach($data['roles_list'] as $v)
+                @if (isset($data['permissions_list']) && (!empty($data['permissions_list'])))
+                    @foreach($data['permissions_list'] as $v)
                         <tr>
                             <td><input type="checkbox" value="1" name=""></td>
-                            <td >{{$v->id}}</td>
-                            <td><a href="{{url('Admin/roles/'.$v->id.'/edit')}}">{{$v->name}}</a></td>
+                            <td><a href="{{url('Admin/permissions/'.$v->id.'/edit')}}">{{$v->name}}</a></td>
+                            <td>{{$v->route_name?$v->route_name:''}}</td>
+                            <td>{{$v->guard_name?$v->guard_name:''}}</td>
                             <td class="td-manage">
-                                <a title="修改" href="{{url('Admin/roles/'.$v->id.'/edit')}}" class="ml-5" style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a>
+                                <a title="修改" href="{{url('Admin/permissions/'.$v->id.'/edit')}}" class="ml-5" style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a>
                                 <a title="删除" href="javascript:void(0);" onclick="del(this,'{{$v->id}}')" style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a>
                             </td>
                         </tr>
@@ -46,7 +48,10 @@
                 @endif
                 </tbody>
             </table>
+        {{ $data['permissions_list']->links() }}
             <!-- 右侧内容框架，更改从这里结束 -->
+
+
         </div>
     </div>
     <!-- 右侧主体结束 -->
@@ -66,7 +71,7 @@
                 //发起异步删除数据
                 $.ajax({
                     type: 'POST',
-                    url: "{{url('Admin/roles')}}/"+id,
+                    url: "{{url('Admin/permissions')}}/"+id,
                     data: {'_method':'DELETE','_token':'{{csrf_token()}}'},
                     dataType: 'JSON',
                     success: function (data) {

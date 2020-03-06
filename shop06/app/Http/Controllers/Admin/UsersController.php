@@ -2,9 +2,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Common\ReturnType;
-use App\Http\Requests\UserRequest;
+use App\Http\Model\UsersModel;
+use App\Http\Requests\UsersRequest;
 
-class UserController extends CommonController
+class UsersController extends CommonController
 {
     public function index(){
 
@@ -14,7 +15,7 @@ class UserController extends CommonController
         return ReturnType::returnCode([],$this->getReturnType(),'admin.update_pwd');
     }
 
-    public function doUpdatePwd(UserRequest $request){
-        return UserModel::updatePwd($request);
+    public function doUpdatePwd(UsersRequest $request){
+        return UsersModel::updatePwd($request);
     }
 }
