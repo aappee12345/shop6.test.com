@@ -12,13 +12,8 @@ class RolesModel extends Model
     const UPDATED_AT = 'updated_at';
     protected $guarded = [];
 
-    public function permissions()
-    {
-        return $this->belongsToMany(PermissionsModel::class);
-    }
-
-    public function givePermission(PermissionsModel $permission)
-    {
-        return $this->permissions()->save($permission);
+    public function permissionsRoles(){
+        /*一对多*/
+        return $this->hasMany('App\Http\Model\PermissionsRolesModel','role_id');
     }
 }

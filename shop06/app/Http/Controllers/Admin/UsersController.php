@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class UsersController extends CommonController
 {
-    public function index(Request $request){
+    public function index(){
         $data['user_list'] = UsersModel::paginate(ConstConfig::getPageNum()->ADMIN_PAGE_NUM);
         $data['count'] = UsersModel::all()->count();
         return ReturnType::returnCode($data,$this->getReturnType(),'admin.manage.user_list');

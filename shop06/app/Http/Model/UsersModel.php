@@ -21,7 +21,7 @@ class UsersModel extends Model
     protected $fillable = ['password'];/*可以被批量赋值的属性 [ protected $guarded = ['price'];不可批量赋值的属性。]*/
 
     public function rolesUser(){
-        return $this->hasOne('App\Http\Model\RolesUserModel',$this->foreignKey);
+        return $this->hasOne('App\Http\Model\RolesUserModel','user_id');
     }
 
     public static function updatePwd(UsersRequest $request){

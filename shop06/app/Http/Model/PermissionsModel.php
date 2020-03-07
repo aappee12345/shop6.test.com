@@ -13,8 +13,4 @@ class PermissionsModel extends Model
     const UPDATED_AT = 'updated_at';
     protected $guarded = [];
 
-    public function roles()
-    {
-        return $this->belongsToMany(RolesModel::class);
-    }
 }
