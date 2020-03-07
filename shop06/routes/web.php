@@ -25,6 +25,7 @@ Route::group(['middleware' => ['web','admin.login','auth'],'prefix'=>'Admin','na
     Route::resource('roles','RolesController');
     Route::resource('users','UsersController');
     Route::resource('permissions','PermissionsController');
+    Route::resource('member','MemberController');
     Route::post('cate/changeOrder',['as'=>'cate.changeOrder','uses'=>'CategoryController@changeOrder']);
     Route::post('art/changeOrder',['as'=>'art.changeOrder','uses'=>'ArticleController@changeOrder']);
     Route::post('art/updateAttr',['as'=>'art.updateAttr','uses'=>'ArticleController@updateAttr']);

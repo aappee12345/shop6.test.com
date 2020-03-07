@@ -43,7 +43,7 @@ class CategoryController extends CommonController
     }
 
     /*PUT Admin/category/{category}*/
-    public function update(Request $request,$id){
+    public function update(CategoryRequest $request,$id){
         $res = CategoryModel::where('id',$id)->update($request->except('_token','_method'));
         if ($res > 0) return ServerResponse::createBySuccessMessage('修改成功');
         return ServerResponse::createByErrorMessage('修改失败');

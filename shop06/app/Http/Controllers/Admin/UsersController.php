@@ -16,7 +16,8 @@ class UsersController extends CommonController
     }
 
     public function create(Request $request){
-
+        $data = [];
+        return ReturnType::returnCode($data,$this->getReturnType(),'admin.manage.user_add');
     }
 
     public function store(UsersRequest $request)
@@ -26,7 +27,8 @@ class UsersController extends CommonController
 
     public function edit(Request $request,$id)
     {
-
+        $data = [];
+        return ReturnType::returnCode($data,$this->getReturnType(),'admin.manage.user_edit');
     }
 
     public function update(UsersRequest $request,$id){

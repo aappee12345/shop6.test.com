@@ -7,6 +7,7 @@ use App\Http\Common\RequestValidate;
 use App\Http\Common\ReturnType;
 use App\Http\Common\ServerResponse;
 use App\Http\Model\PermissionsModel;
+use App\Http\Requests\PermissionsRequest;
 use Illuminate\Http\Request;
 
 class PermissionsController extends CommonController
@@ -34,7 +35,7 @@ class PermissionsController extends CommonController
 
     /**
      */
-    public function store(Request $request)
+    public function store(PermissionsRequest $request)
     {
         $data = $request->except('_token');
         $data['guard_name'] = ConstConfig::getGuardName()->ADMIN;
@@ -63,7 +64,7 @@ class PermissionsController extends CommonController
 
     /**
      */
-    public function update(Request $request, $id)
+    public function update(PermissionsRequest $request, $id)
     {
         $res = PermissionsModel::where('id',$id)->update($request->except('_token','_method'));
         if ($res > 0) return ServerResponse::createBySuccessMessage('修改成功');

@@ -62,7 +62,7 @@ class RolesController extends CommonController
             $data['permissions'][] = $p->permission_id;
         }
         $data['permission_list'] = PermissionsModel::all();
-        return ReturnType::returnCode($data,ConstConfig::getReturnType()->ADMIN_HTML,'admin.manage.roles_permissions_edit');
+        return ReturnType::returnCode($data,$this->getReturnType(),'admin.manage.roles_permissions_edit');
     }
 
     public function doEditPerm(Request $request){

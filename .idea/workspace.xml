@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php" line="67" />
+    <bookmark url="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php" line="68" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb02bb3f-5e3b-476f-b000-ba1eeafb3373" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/ErrorsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop06/app/Http/Middleware/Auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop06/app/Http/Model/PermissionsRolesModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/RolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/RolesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Middleware/AdminLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Middleware/AdminLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Model/PermissionsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Model/PermissionsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Model/RolesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Model/RolesModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop06/app/Http/Model/UsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/app/Http/Model/UsersModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop06/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop06/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +26,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/RolesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
+            <state relative-caret-position="-1008">
               <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding>
                 <element signature="e#45#77#0#PHP" expanded="true" />
@@ -42,31 +36,76 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/RolesModel.php">
+        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Middleware/Auth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="117">
+              <caret line="33" column="39" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="39" />
               <folding>
-                <element signature="e#40#72#0#PHP" expanded="true" />
+                <element signature="e#45#77#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/LoginController.php">
+        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
+            <state relative-caret-position="-398">
+              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/ArticleController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1150">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/MemberModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
               <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Requests/MemberRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop06/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/MemberController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="e#46#78#0#PHP" expanded="true" />
               </folding>
@@ -75,49 +114,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shop06/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CommonController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="40" column="82" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/PermissionsRolesModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/UsersModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            <state relative-caret-position="192">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
               <folding>
-                <element signature="e#33#65#0#PHP" expanded="true" />
+                <element signature="e#46#78#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/RolesUserModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/PermissionsModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -156,10 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CategoryController.php" />
-        <option value="$PROJECT_DIR$/shop06/resources/views/admin/article/edit.blade.php" />
-        <option value="$PROJECT_DIR$/shop06/app/Tool/StringDeal.php" />
-        <option value="$PROJECT_DIR$/shop06/app/Http/Common/RequestValidate.php" />
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/article/index.blade.php" />
         <option value="$PROJECT_DIR$/shop06/config/app.php" />
         <option value="$PROJECT_DIR$/shop06/.env" />
@@ -180,7 +179,6 @@
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/manage/permissions_add.blade.php" />
         <option value="$PROJECT_DIR$/shop06/public/admin/css/xadmin.css" />
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/manage/permissions_list.blade.php" />
-        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php" />
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/manage/roles_edit.blade.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Requests/BaseRequest.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Requests/RolesRequest.php" />
@@ -188,17 +186,14 @@
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/manage/roles_permissions_add.blade.php" />
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/manage/roles_permissions_edit.blade.php" />
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/manage/roles_list.blade.php" />
-        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/RolesController.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/ArticleController.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Model/ArticleModel.php" />
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/manage/user_list.blade.php" />
         <option value="$PROJECT_DIR$/shop06/resources/views/admin/layouts/base.blade.php" />
-        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/UsersController.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Model/PermissionsModel.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/ErrorsController.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Middleware/AdminLogin.php" />
-        <option value="$PROJECT_DIR$/shop06/routes/web.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Service/Impl/UserServiceImpl.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/LoginController.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Model/PermissionsRoles.php" />
@@ -207,6 +202,14 @@
         <option value="$PROJECT_DIR$/shop06/app/Http/Model/UsersModel.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Model/PermissionsRolesModel.php" />
         <option value="$PROJECT_DIR$/shop06/app/Http/Middleware/Auth.php" />
+        <option value="$PROJECT_DIR$/shop06/app/Http/Model/MemberModel.php" />
+        <option value="$PROJECT_DIR$/shop06/app/Http/Requests/MemberRequest.php" />
+        <option value="$PROJECT_DIR$/shop06/routes/web.php" />
+        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/RolesController.php" />
+        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CategoryController.php" />
+        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php" />
+        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/UsersController.php" />
+        <option value="$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/MemberController.php" />
       </list>
     </option>
   </component>
@@ -351,7 +354,16 @@
               <item name="shop06" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Common" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop6.test.com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop6.test.com" type="462c0819:PsiDirectoryNode" />
+              <item name="shop06" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shop6.test.com" type="b2602c69:ProjectViewProjectNode" />
@@ -360,6 +372,14 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop6.test.com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop6.test.com" type="462c0819:PsiDirectoryNode" />
+              <item name="shop06" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shop6.test.com" type="b2602c69:ProjectViewProjectNode" />
@@ -399,9 +419,9 @@
       <recent name="E:\php\wwwroot\2019\shop6.test.com\shop06\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\php\wwwroot\2019\shop6.test.com\shop06\app\Http\Controllers\Admin" />
       <recent name="E:\php\wwwroot\2019\shop6.test.com\shop06\app\Http\Model" />
       <recent name="E:\php\wwwroot\2019\shop6.test.com\shop06\public\admin\js" />
-      <recent name="E:\php\wwwroot\2019\shop6.test.com\shop06\app\Http\Controllers\Admin" />
       <recent name="E:\php\wwwroot\2019\shop6.test.com\shop06\public\home" />
       <recent name="E:\php\wwwroot\2019\shop6.test.com\shop06\public\font" />
     </key>
@@ -457,12 +477,12 @@
       <workItem from="1583292181094" duration="17323000" />
       <workItem from="1583379915049" duration="14839000" />
       <workItem from="1583462814704" duration="14819000" />
-      <workItem from="1583547908736" duration="24067000" />
+      <workItem from="1583547908736" duration="26461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="335863000" />
+    <option name="totallyTimeSpent" value="338257000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -477,7 +497,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22761194" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22761194" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -489,7 +509,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298731" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3279743" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3279743" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3298731" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -503,34 +523,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shop06/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Tool/StringDeal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Common/RequestValidate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop06/resources/views/admin/manage/permissions_edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
@@ -577,16 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1775">
-          <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
-          <folding>
-            <element signature="e#46#78#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -644,16 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CommonController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="e#46#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop06/app/Http/Common/ConstConfig.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -682,13 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/ArticleModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -734,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop06/app/Http/Common/ReturnType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -754,16 +712,6 @@
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
             <element signature="e#39#51#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="e#45#77#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,25 +757,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="40" column="82" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop06/storage/logs/laravel.log">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/RolesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="e#45#77#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/RolesUserModel.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -843,13 +774,6 @@
           <folding>
             <element signature="e#33#65#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/RolesModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -869,11 +793,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shop06/app/Http/Middleware/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="377">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/RolesModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/ArticleModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Model/MemberModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Requests/MemberRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CommonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="e#46#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1150">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-398">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/PermissionsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#46#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/RolesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1008">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="e#45#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="39" />
+          <folding>
+            <element signature="e#45#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop06/app/Http/Controllers/Admin/MemberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
