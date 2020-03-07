@@ -101,6 +101,12 @@
                     </a>
                     <ul class="sub-menu" style="display:none">
                         <li>
+                            <a href="{{url('Admin/users')}}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                管理员列表
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{url('Admin/roles')}}">
                                 <i class="iconfont">&#xe6a7;</i>
                                 角色列表
