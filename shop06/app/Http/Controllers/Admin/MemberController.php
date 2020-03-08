@@ -1,9 +1,9 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\MemberRequest;
 
-class MemberController extends Controller
+class MemberController extends CommonController
 {
     public function index()
     {

@@ -59,7 +59,7 @@ class ServerResponse
     }
 
     public static function isSuccess(){
-        return self::$code == ResponseCode::getCode()->SUCCESS;
+        return self::$status == ResponseCode::getCode()->SUCCESS;
     }
 
     public static function createBySuccess(){

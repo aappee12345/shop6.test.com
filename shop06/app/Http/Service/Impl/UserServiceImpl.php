@@ -36,10 +36,6 @@ class UserServiceImpl implements IUserService
     public static function updatePassword(UsersRequest $request, $user)
     {
         /*处理修改密码*/
-        /*
-        $user_id = $request->session()->get(ConstConfig::getSessionKey()->ADMIN_USER)->id;//查询session
-        $user = UserModel::find($user_id);//获取当前用户
-        */
         if ($request->input('password')==Crypt::decrypt($user->password)){
             /*原密码正确 执行修改*/
             //
@@ -51,4 +47,25 @@ class UserServiceImpl implements IUserService
         }
     }
 
+    public static function editUser(UsersRequest $request,$user){
+        /*处理添加或修改用户*/
+        $email = $request->input('email');
+        if ($user == null){
+            $res = UsersModel::where('email',$email)->get();
+            if ($res) return ServerResponse::createByErrorMessage('邮箱已存在');
+            $user = new UsersModel();
+        }
+        $user->username = $request->input('username');
+        $user->email = $email;
+        $user->password = Crypt::encrypt($request->input('password'));
+        $res = $user->save();
+        if ($res){
+            if ($user->id!=null) RolesUserServiceImpl::delRolesUser($user->id);
+            RolesUserServiceImpl::addRolesUser($user,$request->input('role_id'));
+            if (ServerResponse::isSuccess()){
+                return ServerResponse::createBySuccessMessage('操作成功');
+            }
+        }
+        return ServerResponse::createByErrorMessage('操作失败');
+    }
 }
