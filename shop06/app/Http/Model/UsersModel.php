@@ -2,6 +2,7 @@
 namespace App\Http\Model;
 
 use App\Http\Common\ConstConfig;
+use App\Http\Common\ServerResponse;
 use App\Http\Requests\UsersRequest;
 use App\Http\Service\Impl\UserServiceImpl;
 use Illuminate\Database\Eloquent\Model;

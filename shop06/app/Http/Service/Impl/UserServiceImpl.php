@@ -9,6 +9,7 @@ use App\Http\Requests\UsersRequest;
 use App\Http\Service\IUserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 
 
 class UserServiceImpl implements IUserService
@@ -49,10 +50,13 @@ class UserServiceImpl implements IUserService
 
     public static function editUser(UsersRequest $request,$user){
         /*处理添加或修改用户*/
+        DB::beginTransaction();
         $email = $request->input('email');
         if ($user == null){
             $res = UsersModel::where('email',$email)->get();
-            if ($res) return ServerResponse::createByErrorMessage('邮箱已存在');
+            if ($res->count() > 0){
+                return ServerResponse::createByErrorMessage('邮箱已存在');
+            }
             $user = new UsersModel();
         }
         $user->username = $request->input('username');
@@ -60,12 +64,17 @@ class UserServiceImpl implements IUserService
         $user->password = Crypt::encrypt($request->input('password'));
         $res = $user->save();
         if ($res){
-            if ($user->id!=null) RolesUserServiceImpl::delRolesUser($user->id);
-            RolesUserServiceImpl::addRolesUser($user,$request->input('role_id'));
-            if (ServerResponse::isSuccess()){
-                return ServerResponse::createBySuccessMessage('操作成功');
+            if ($user->id!=null) {
+                RolesUserServiceImpl::delRolesUser($user->id);
             }
+            RolesUserServiceImpl::addRolesUser($user,$request->input('role_id'));
         }
-        return ServerResponse::createByErrorMessage('操作失败');
+        if (ServerResponse::isSuccess()){
+            DB::commit();
+            return ServerResponse::createBySuccessMessage('操作成功');
+        } else {
+            DB::rollBack();
+            return ServerResponse::createByErrorMessage('操作失败');
+        }
     }
 }

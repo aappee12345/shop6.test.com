@@ -1,6 +1,6 @@
 @extends('admin.layouts.base')
 @section('title')
-    用户添加
+    会员修改
 @endsection
 @section('custom_css')
     <style>
@@ -17,55 +17,51 @@
             <form class="layui-form">
                 <div class="layui-form-item">
                     <label for="username" class="layui-form-label">
-                        <span class="x-red">*</span>用户名称
+                        <span class="x-red">*</span>会员名称
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="username" name="username" required="" autocomplete="off" class="layui-input">
+                        <input type="text" id="username" name="username" value="{{$data['info']->username}}" required="" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label for="email" class="layui-form-label">
-                        <span class="x-red">*</span>用户邮箱
+                        <span class="x-red">*</span>会员邮箱
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="email" name="email" required="" autocomplete="off" class="layui-input">
+                        <input type="text" id="email" name="email" required="" value="{{$data['info']->email}}" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label for="password" class="layui-form-label">
-                        <span class="x-red">*</span>密码
+                    <label for="phone" class="layui-form-label">
+                        <span class="x-red">*</span>手机
                     </label>
                     <div class="layui-input-inline">
-                        <input type="password" id="password" name="password" required="" autocomplete="off" class="layui-input">
+                        <input type="text" id="phone" name="phone" required="" value="{{$data['info']->phone}}" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label for="password_confirmation" class="layui-form-label">
-                        <span class="x-red">*</span>确认密码
+                    <label for="question" class="layui-form-label">
+                        <span class="x-red">*</span>密码问题
                     </label>
                     <div class="layui-input-inline">
-                        <input type="password" id="password_confirmation" name="password_confirmation" required="" autocomplete="off" class="layui-input">
+                        <input type="text" id="question" name="question" required="" value="{{$data['info']->question}}" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label for="role_id" class="layui-form-label">
-                        <span class="x-red">*</span>所属角色
+                    <label for="answer" class="layui-form-label">
+                        <span class="x-red">*</span>密码答案
                     </label>
                     <div class="layui-input-inline">
-                        <select name="role_id">
-                            @foreach ($data['roles_list'] as $vo)
-                                <option value="{{$vo->id}}">{{$vo->name}}</option>
-                            @endforeach
-                        </select>
+                        <input type="text" id="answer" name="answer" required="" value="{{$data['info']->answer}}" autocomplete="off" class="layui-input">
                     </div>
                 </div>
-
                 <div class="layui-form-item">
                     <label for="layui-btn" class="layui-form-label">
                     </label>
-                    <button  class="layui-btn" lay-filter="add" lay-submit="">
-                        增 加
+                    <button  class="layui-btn" lay-filter="edit" lay-submit="">
+                        修 改
                     </button>
+                    @method('put')
                     {{csrf_field()}}
                 </div>
             </form>
@@ -81,19 +77,21 @@
             layui.use('form', function () {
                 var form = layui.form();
                 //监听提交
-                form.on('submit(add)', function (data) {
+                form.on('submit(edit)', function (data) {
                     $.ajax({
                         type: 'POST',
-                        url: "{{url('Admin/users')}}",
+                        url: "{{url('Admin/member')}}/{{$data['info']->id}}",
                         data: data.field,
                         dataType: 'JSON',
                         success: function (arr) {
                             layer.msg(JSON.stringify(arr.msg), function () {
+                                console.log(arr.msg);
                                 if (arr.status == 0){
-                                    location.href="{{url('Admin/users')}}";
+                                    location.href="{{url('Admin/member')}}";
                                 }else{
-                                    location.href="{{url('Admin/users/create')}}";
+                                    location.href="{{url('Admin/member')}}/{{$data['info']->id}}/edit";
                                 }
+
                             });
                         }
                     })

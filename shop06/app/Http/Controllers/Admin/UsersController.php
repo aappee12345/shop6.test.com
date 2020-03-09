@@ -54,7 +54,7 @@ class UsersController extends CommonController
     }
 
     public function doUpdatePwd(UsersRequest $request){
-        $request->scene('updatePwd')->validated();
+        $request->scene('updatePwd')->validate();
         return UsersModel::updatePwd($request);
     }
 }

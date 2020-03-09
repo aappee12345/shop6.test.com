@@ -32,16 +32,9 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label for="guard_name" class="layui-form-label">
-                        <span class="x-red">*</span>所属板块名称
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="text" id="guard_name" name="guard_name" required="" value="{{$data['info']->guard_name}}" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
                     <label for="L_repass" class="layui-form-label">
                     </label>
+                    <input type="hidden" id="guard_name" name="guard_name" required="" value="{{$data['info']->guard_name}}" autocomplete="off" class="layui-input">
                     <button  class="layui-btn" lay-filter="edit" lay-submit="">
                         修 改
                     </button>
