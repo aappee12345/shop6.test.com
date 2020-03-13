@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Model;
 
 use App\Http\Common\ConstConfig;
@@ -17,47 +16,18 @@ class ArticleModel extends Model
     const UPDATED_AT = 'update_time';
     protected $guarded = [];
 
-    /**
-     * @return string
-     */
-    public function getTable()
-    {
-        return $this->table;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPrimaryKey(): string
-    {
-        return $this->primaryKey;
-    }
-
-    /**
-     * @return string
-     */
-    public function getForeignKey(): string
-    {
-        return $this->foreignKey;
-    }
-
-    /**
-     * @return string
-     */
-    public function getOrderField(): string
-    {
-        return $this->orderField;
-    }
-
+    public function getTable(){ return $this->table; }
+    public function getPrimaryKey(){ return $this->primaryKey; }
+    public function getForeignKey(){ return $this->foreignKey; }
+    public function getOrderField(){ return $this->orderField; }
     /**
      * 获得该文章的所属分类。
      */
-    public function category()
-    {
+    public function category(){
         return $this->belongsTo('App\Http\Model\CategoryModel',$this->foreignKey);
     }
 
-    public static function getArticleList($cid=0,$length){
-        return ArticleServiceImpl::getArticleList($cid,$length);
+    public static function getArticleList($cid=0,$length,$field='*'){
+        return ArticleServiceImpl::getArticleList($cid,$length,$field);
     }
 }

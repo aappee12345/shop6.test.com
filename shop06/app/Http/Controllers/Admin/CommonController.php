@@ -7,6 +7,8 @@ use App\Http\Common\RequestValidate;
 use App\Http\Common\ServerResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class CommonController extends Controller
 {
@@ -59,5 +61,21 @@ class CommonController extends Controller
         $res = $className::destroy($id);
         if ($res > 0) return ServerResponse::createBySuccessMessage('删除成功');
         return ServerResponse::createByErrorMessage('删除失败');
+    }
+
+    /*批量添加*/
+    public function commonAddAll($data,$table=null){
+        if ($table==null)  return DB::table($this->getTable())->insert($data);
+        return DB::table($table)->insert($data);
+    }
+    /*准备批量添加数据*/
+    public function returnInsertPermissions($request){
+        $arr = [];
+        $permissions = explode(',',$request->input('permissions'));
+        foreach ($permissions as $k=>$p){
+            $arr[$k]['permission_id'] = $p;
+            $arr[$k]['role_id'] = $request->input('id');
+        }
+        return $arr;
     }
 }

@@ -16,11 +16,19 @@
             <!-- 右侧内容框架，更改从这里开始 -->
             <form class="layui-form">
                 <div class="layui-form-item">
-                    <label for="L_email" class="layui-form-label">
+                    <label for="name" class="layui-form-label">
                         <span class="x-red">*</span>角色名称
                     </label>
                     <div class="layui-input-inline">
                         <input type="text" id="name" name="name" required="" value="{{$data['info']->name}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="guard_name" class="layui-form-label">
+                        <span class="x-red">*</span>所属模块
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="guard_name" name="guard_name" required="" value="{{$data['info']->guard_name}}" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">

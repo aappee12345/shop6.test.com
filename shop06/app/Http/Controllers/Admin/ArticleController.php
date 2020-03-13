@@ -30,9 +30,9 @@ class ArticleController extends CommonController
     {
         $cid = $request->input('cid');
         $data['list'] = $list = ArticleModel::getArticleList($cid,ConstConfig::getPageNum()->ADMIN_PAGE_NUM);
-        $data['count'] = $list->count();
+        $data['count'] = ArticleModel::where('article_cat_id',$cid)->count();
         $data['host_root'] = ConstConfig::getFtpInfo()->HOST.ConstConfig::getFtpInfo()->ROOT;
-        return ReturnType::returnCode($data,ConstConfig::getReturnType()->HOME_HTML,'admin.article.index');
+        return ReturnType::returnCode($data,ConstConfig::getReturnType()->ADMIN_HTML,'admin.article.index');
     }
 
     /**

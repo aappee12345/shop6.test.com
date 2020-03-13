@@ -15,8 +15,8 @@ class LoginController extends CommonController
             return UserServiceImpl::doLogin($request);/*处理登录*/
         }
         $user = $request->session()->get(ConstConfig::getSessionKey()->ADMIN_USER);
-        if ($user!=null&&$user->role!=null){/*登录判断*/
-            return redirect('Admin/index/index'); /*已登录 跳转至后台首页*/
+        if ($user!=null){/*登录判断*/
+            return redirect()->route('admin.index'); /*已登录 跳转至后台首页*/
         }
         return ReturnType::returnCode([],$this->getReturnType(),'admin.login');
     }
