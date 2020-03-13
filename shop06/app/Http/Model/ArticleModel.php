@@ -27,7 +27,7 @@ class ArticleModel extends Model
         return $this->belongsTo('App\Http\Model\CategoryModel',$this->foreignKey);
     }
 
-    public static function getArticleList($cid=0,$length){
-        return ArticleServiceImpl::getArticleList($cid,$length);
+    public static function getArticleList($cid=0,$length,$field='*'){
+        return ArticleServiceImpl::getArticleList($cid,$length,$field);
     }
 }

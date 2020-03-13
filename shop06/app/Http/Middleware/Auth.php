@@ -16,12 +16,16 @@ class Auth
         $current_route = $request->route()->getName();/*获取当前路由*/
         $flag = false;
         if ($user != null){
-            /*用户->用户角色表->角色表->角色权限表->[权限|路由]列表*/
-            $permissionsRoles = $user->rolesUser->roles->permissionsRoles;
-            foreach ($permissionsRoles as $pr){
-                if ($current_route == $pr->permissions->route_name){
-                    $flag = true;
-                    break;
+            if ($user->username == 'admin'){
+                $flag = true;
+            } else {
+                /*用户->用户角色表->角色表->角色权限表->[权限|路由]列表*/
+                $permissionsRoles = $user->rolesUser->roles->permissionsRoles;
+                foreach ($permissionsRoles as $pr){
+                    if ($current_route == $pr->permissions->route_name){
+                        $flag = true;
+                        break;
+                    }
                 }
             }
         }

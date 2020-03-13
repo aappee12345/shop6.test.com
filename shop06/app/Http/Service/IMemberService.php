@@ -12,7 +12,7 @@ interface IMemberService
     public static function getMemberList(Request $request);
     public static function editMember(MemberRequest $request,$member);
     public static function delMember($id);
-    public static function doLogin($username,$password);
+    public static function doLogin(MemberRequest $request);
     public static function logOut();
     public static function doRegistor(MemberRequest $request);
     public static function updatePwd();

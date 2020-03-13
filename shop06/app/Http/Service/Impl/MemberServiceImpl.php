@@ -11,6 +11,7 @@ use App\Http\Model\MemberModel;
 use App\Http\Requests\MemberRequest;
 use App\Http\Service\IMemberService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class MemberServiceImpl implements IMemberService
 {
@@ -46,9 +47,20 @@ class MemberServiceImpl implements IMemberService
         return ServerResponse::createByErrorMessage('删除失败');
     }
 
-    public static function doLogin($username, $password)
+    public static function doLogin(MemberRequest $request)
     {
-        // TODO: Implement doLogin() method.
+        $username = $request->input('username');
+        $password = $request->input('password');
+        $member = MemberModel::where('username',$username)->get()[0];
+        if ($member == null){
+            return ServerResponse::createByErrorMessage('用户名错误');
+        }
+        if ($password != Crypt::decrypt($member->password)){
+            return ServerResponse::createByErrorMessage('密码错误');
+        }
+        $member->password = null;
+        $request->session()->put(ConstConfig::getSessionKey()->WEB,$member);
+        return ServerResponse::createBySuccessMessage('登录成功');
     }
 
     public static function logOut()
@@ -58,7 +70,14 @@ class MemberServiceImpl implements IMemberService
 
     public static function doRegistor(MemberRequest $request)
     {
-        // TODO: Implement doRegistor() method.
+        $member = new MemberModel();
+        $member->username = $request->input('username');
+        $member->phone = $member->username;
+        $member->password = Crypt::encrypt($request->input('password'));
+        $member->realname = $request->input('realname');
+        $member->qq = $request->input('qq');
+        $member->email = $member->qq.'@qq.com';
+        return $member->save();
     }
 
     public static function updatePwd()

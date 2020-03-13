@@ -1,6 +1,6 @@
 @extends('admin.layouts.base')
 @section('title')
-    文章添加
+    文章编缉
 @endsection
 @section('custom_css')
     <style>

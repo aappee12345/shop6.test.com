@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
 Route::group(['middleware' => ['web','admin.login','auth'],'prefix'=>'Admin','namespace'=>'Admin'],function(){
     Route::get('index/index',['as'=>'admin.index','uses'=>'IndexController@index']);
@@ -26,6 +26,7 @@ Route::group(['middleware' => ['web','admin.login','auth'],'prefix'=>'Admin','na
     Route::resource('users','UsersController');
     Route::resource('permissions','PermissionsController');
     Route::resource('member','MemberController');
+    Route::resource('link_type','LinkTypeController');
     Route::post('cate/changeOrder',['as'=>'cate.changeOrder','uses'=>'CategoryController@changeOrder']);
     Route::post('art/changeOrder',['as'=>'art.changeOrder','uses'=>'ArticleController@changeOrder']);
     Route::post('art/updateAttr',['as'=>'art.updateAttr','uses'=>'ArticleController@updateAttr']);
@@ -33,10 +34,20 @@ Route::group(['middleware' => ['web','admin.login','auth'],'prefix'=>'Admin','na
     Route::any('role/{role}/editPermissions',['as'=>'role.editPermissions','uses'=>'RolesController@editPermissions']);
     Route::post('role/doEditPerm',['as'=>'role.doEditPerm','uses'=>'RolesController@doEditPerm']);
 });
+Route::group(['middleware' => ['web','member.login'],'prefix'=>'Home','namespace'=>'Home'],function(){
+
+});
 Route::group(['middleware' => ['web'],'prefix'=>'Home','namespace'=>'Home'],function(){
-    Route::resource('article','ArticleController');
-    Route::get('article/index/{cid?}','ArticleController@index');
-    Route::get('article/show/{id}','ArticleController@show')->where(['id' => '[0-9]+']);
+    Route::get('index/index','IndexController@index');
+    Route::get('member/index','MemberController@index');
+    Route::get('member/info','MemberController@info');
+    Route::post('member/registor','MemberController@registor');
+    Route::post('member/login','MemberController@login');
+    Route::get('news/index/{cid?}','NewsController@index')->where(['cid' => '[0-9]+']);
+    Route::get('news/content/{id}','NewsController@show')->where(['id' => '[0-9]+']);
+    Route::get('about/index/{id?}','AboutController@index')->where(['id' => '[0-9]+']);
+    Route::get('custom/index/{id?}','CustomController@index')->where(['id' => '[0-9]+']);
+    Route::get('custom/cooper','CustomController@cooper');
 });
 Route::any('Admin/errors','Admin\ErrorsController@index');
 Route::any('Admin/login/index',['as'=>'admin.login','uses'=>'Admin\LoginController@index']);

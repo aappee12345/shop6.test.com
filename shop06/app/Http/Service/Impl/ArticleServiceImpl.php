@@ -22,12 +22,12 @@ class ArticleServiceImpl implements IArticleService
 
     }
 
-    public static function getArticleList($cid=0,$length=10)
+    public static function getArticleList($cid=0,$length=10,$field='*')
     {
         if ($cid == 0){
-            return ArticleModel::orderBy('article_sort','Desc')->paginate($length);
+            return ArticleModel::select($field)->orderBy('article_sort','Desc')->paginate($length);
         }
-        return ArticleModel::where('article_cat_id',$cid)->orderBy('article_sort','Desc')->paginate($length);
+        return ArticleModel::select($field)->where('article_cat_id',$cid)->orderBy('article_sort','Desc')->paginate($length);
     }
 
 }

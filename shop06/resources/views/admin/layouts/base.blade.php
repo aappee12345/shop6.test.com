@@ -24,7 +24,7 @@
     <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
+            <a href="javascript:;">{{ Session::get(\App\Http\Common\ConstConfig::getSessionKey()->ADMIN_USER)->username }}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                 <dd><a href="">个人信息</a></dd>
                 <dd><a href="{{url('Admin/user/update_pwd')}}">修改密码</a></dd>
@@ -123,65 +123,20 @@
                 <li class="list" >
                     <a href="javascript:;">
                         <i class="iconfont">&#xe6a3;</i>
-                        系统统计
+                        友情链接管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu" style="display:none">
+                    <ul class="sub-menu">
                         <li>
-                            <a href="./echarts1.html">
+                            <a href="{{url('Admin/link_type')}}">
                                 <i class="iconfont">&#xe6a7;</i>
-                                拆线图
+                                链接分类列表
                             </a>
                         </li>
                         <li>
-                            <a href="./echarts2.html">
+                            <a href="{{url('Admin/link')}}">
                                 <i class="iconfont">&#xe6a7;</i>
-                                柱状图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts3.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                地图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts4.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                饼图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts5.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                k线图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts6.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                仪表图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://echarts.baidu.com/examples.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                更多案例
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list" >
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe6a3;</i>
-                        系统设置
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu" style="display:none">
-                        <li>
-                            <a href="./banner-list.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                轮播列表
+                                友情链接列表
                             </a>
                         </li>
                     </ul>
